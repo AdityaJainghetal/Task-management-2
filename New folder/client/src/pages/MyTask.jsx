@@ -1,79 +1,75 @@
-import axios from 'axios'
-import React, { useState } from 'react'
-import { useEffect } from 'react'
-import Table from 'react-bootstrap/Table';
-import Button from 'react-bootstrap/Button';
-
-
+import axios from "axios";
+import React, { useState } from "react";
+import { useEffect } from "react";
+import Table from "react-bootstrap/Table";
+import Button from "react-bootstrap/Button";
 
 const MyTask = () => {
-  const [mydata,setMydata] = useState([])
- 
- const loadData=async()=>{
-  let api=`http://localhost:8000/user/usertaskdisplay?id=${localStorage.getItem("uid")}`;
+  const [mydata, setMydata] = useState([]);
 
-  const response = await axios.get(api)
-  console.log(response.data)
-  setMydata(response.data)
- }
+  const loadData = async () => {
+    let api = `https://task-management-2-p6gu.onrender.com/user/usertaskdisplay?id=${localStorage.getItem(
+      "uid"
+    )}`;
 
- useEffect(()=>{
-  loadData()
- },[])
+    const response = await axios.get(api);
+    console.log(response.data);
+    setMydata(response.data);
+  };
 
- const taskStatusChange=async(id)=>{
-  let api="http://localhost:8000/user/taskstatuschange";
-  const response = await axios.post(api, {id:id})
-  console.log(response.data);
-  loadData()
- }
+  useEffect(() => {
+    loadData();
+  }, []);
 
+  const taskStatusChange = async (id) => {
+    let api =
+      "https://task-management-2-p6gu.onrender.com/user/taskstatuschange";
+    const response = await axios.post(api, { id: id });
+    console.log(response.data);
+    loadData();
+  };
 
-
- 
- let sno=0;
-    const ans = mydata.map((key)=>{
-      sno++;
-      return(
-        <>
+  let sno = 0;
+  const ans = mydata.map((key) => {
+    sno++;
+    return (
+      <>
         <tr>
           <td>{sno}</td>
           <td>{key.tasktitle}</td>
           <td>{key.taskdetail}</td>
           <td>{key.taskduration}</td>
           <td>
-          <Button variant="primary" onClick={()=>{taskStatusChange(key._id)}}>{key.status}</Button>
-
+            <Button
+              variant="primary"
+              onClick={() => {
+                taskStatusChange(key._id);
+              }}
+            >
+              {key.status}
+            </Button>
           </td>
         </tr>
-        
-        
-        </>
-
-      )
-    })
-
+      </>
+    );
+  });
 
   return (
     <>
-    <h1>MyTask</h1>
-    <Table striped bordered hover size="sm">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Task title</th>
-          <th>Task detail</th>
-          <th>Task time duration in hours</th>
-        </tr>
-      </thead>
-      <tbody>
-      {ans}
-      </tbody>
+      <h1>MyTask</h1>
+      <Table striped bordered hover size="sm">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Task title</th>
+            <th>Task detail</th>
+            <th>Task time duration in hours</th>
+          </tr>
+        </thead>
+        <tbody>{ans}</tbody>
+      </Table>
+    </>
+  );
+};
 
-      </Table>  
-    
-     </>
-  )
-}
-
-export default MyTask
+export default MyTask;

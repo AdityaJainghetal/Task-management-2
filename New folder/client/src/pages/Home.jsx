@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useState } from "react";
 import axios from "axios";
 import { message } from "antd";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const [email, setemail] = useState("");
@@ -12,10 +12,13 @@ const Home = () => {
   const handleSubmit = async () => {
     if (usertype === "admin") {
       try {
-        const res = await axios.post("http://localhost:8000/admin/adminlogin", {
-          email,
-          password,
-        });
+        const res = await axios.post(
+          "https://task-management-2-p6gu.onrender.com/admin/adminlogin",
+          {
+            email,
+            password,
+          }
+        );
 
         if (res.data.success) {
           localStorage.setItem("adminname", res.data.admin.name);
@@ -23,20 +26,22 @@ const Home = () => {
           localStorage.setItem("adminEmail", res.data.admin.email);
           localStorage.setItem("adminId", res.data.admin.id);
 
-            navigate("/admindashboard");
+          navigate("/admindashboard");
         } else {
           message.error("Admin login failed");
         }
       } catch (error) {
         message.error(error.response?.data?.message || "Admin login error");
       }
-
     } else if (usertype === "user") {
       try {
-        const response = await axios.post("http://localhost:8000/user/userlogin", {
-          email,
-          password,
-        });
+        const response = await axios.post(
+          "https://task-management-2-p6gu.onrender.com/user/userlogin",
+          {
+            email,
+            password,
+          }
+        );
 
         if (response.status === 200) {
           localStorage.setItem("username", response.data.username);
@@ -57,10 +62,14 @@ const Home = () => {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-600">
       <div className="bg-white shadow-md rounded-lg p-8 w-96 transform transition-transform duration-500 ease-in-out scale-95 hover:scale-100">
-        <h2 className="text-2xl font-bold text-center mb-6 animate-fade-in">Login Form</h2>
+        <h2 className="text-2xl font-bold text-center mb-6 animate-fade-in">
+          Login Form
+        </h2>
         <form>
           <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2">Enter Id:</label>
+            <label className="block text-gray-700 text-sm font-bold mb-2">
+              Enter Id:
+            </label>
             <input
               type="text"
               value={email}
@@ -70,7 +79,9 @@ const Home = () => {
           </div>
 
           <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2">Enter Password:</label>
+            <label className="block text-gray-700 text-sm font-bold mb-2">
+              Enter Password:
+            </label>
             <input
               type="password"
               value={password}
@@ -80,7 +91,9 @@ const Home = () => {
           </div>
 
           <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2">Login As:</label>
+            <label className="block text-gray-700 text-sm font-bold mb-2">
+              Login As:
+            </label>
             <select
               value={usertype}
               onChange={(e) => setUserType(e.target.value)}
