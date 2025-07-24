@@ -1,0 +1,178 @@
+
+
+#header 
+{
+  width: 100%;
+  padding:20px;
+  background-color: rgb(46, 43, 87);
+  text-align: center;
+}
+
+#header h1 
+{
+  color: rgb(132, 146, 152);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#footer
+{
+  width: 100%;
+  height: 50px;
+  background-color: lightblue;
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  line-height: 2;
+  color: gray;
+}
+
+#myform
+{
+  width: 400px;
+  margin: auto;
+  padding-top: 50px;
+}
+
+#admindata
+{
+  padding: 10px;
+  background-color: rgb(83, 83, 121);
+  color: white;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.logoutbtn
+{
+  text-decoration: none;
+  color: white;
+  margin-left: 10px;
+}
+
+a.logoutbtn:hover
+{
+  text-decoration: none;
+  color: rgb(123, 198, 217);
+  margin-left: 10px;
+}
+
+#adminarea
+{
+  display: flex;
+  
+}
+
+#adminMenu
+{
+  width: 15%;
+}
+#adminRightData
+{
+  width: 85%;
+}
+
+#admindata{
+  padding: 10px;
+  background-color: rgb(40, 46, 143);
+  color: white;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+
+.logoutbtn{
+  text-decoration: none;
+  color: white;
+  margin-left: 10px;
+}
+
+#adminRightdata{
+  margin-left: 150px;
+}
+
+#userdisplaylogin{
+  padding: 10px;
+  background-color: aliceblue;
+  color: brown;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+#userDashboardData{
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+}
+
+#userleftmenu{
+  width: 20%;
+  padding-top: 20px;
+}
+
+#userrightmenu{
+  width: 80%;
+}
+
+
+
+
+
+/* AssignTask.css */
+
+body {
+  background-color: #f8f9fa; /* Light background for better contrast */
+  font-family: Arial, sans-serif; /* Clean font */
+}
+
+h1 {
+  text-align: center; /* Center the title */
+  margin-bottom: 20px; /* Space below the title */
+  color: #343a40; /* Darker text color */
+}
+
+.table-container {
+  margin: 20px auto; /* Center the table */
+  max-width: 800px; /* Limit the width of the table */
+  background-color: #ffffff; /* White background for the table */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  overflow: hidden; /* Prevent overflow */
+}
+
+.table {
+  margin: 0; /* Remove default margin */
+}
+
+.table th {
+  background-color: #007bff; /* Bootstrap primary color */
+  color: white; /* White text for headers */
+}
+
+.table td {
+  vertical-align: middle; /* Center align the content */
+}
+
+.btn-primary {
+  background-color: #007bff; /* Bootstrap primary color */
+  border: none; /* Remove border */
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+.btn-primary:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+.btn-primary:focus {
+  outline: none; /* Remove focus outline */
+}
+
+
+
+
+
+
+
