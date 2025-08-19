@@ -59,63 +59,144 @@ const Home = () => {
     }
   };
 
-  return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-600">
-      <div className="bg-white shadow-md rounded-lg p-8 w-96 transform transition-transform duration-500 ease-in-out scale-95 hover:scale-100">
-        <h2 className="text-2xl font-bold text-center mb-6 animate-fade-in">
-          Login Form
-        </h2>
-        <form>
-          <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2">
-              Enter Id:
-            </label>
-            <input
-              type="text"
-              value={email}
-              onChange={(e) => setemail(e.target.value)}
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline transition duration-300 ease-in-out transform hover:scale-105"
-            />
-          </div>
+  // return (
+  //   <div className="flex items-center justify-center min-h-screen bg-gray-600">
+  //     <div className="bg-white shadow-md rounded-lg p-8 w-96 transform transition-transform duration-500 ease-in-out scale-95 hover:scale-100">
+  //       <h2 className="text-2xl font-bold text-center mb-6 animate-fade-in">
+  //         Login Form
+  //       </h2>
+  //       <form>
+  //         <div className="mb-4">
+  //           <label className="block text-gray-700 text-sm font-bold mb-2">
+  //             Enter Id:
+  //           </label>
+  //           <input
+  //             type="text"
+  //             value={email}
+  //             onChange={(e) => setemail(e.target.value)}
+  //             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline transition duration-300 ease-in-out transform hover:scale-105"
+  //           />
+  //         </div>
 
-          <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2">
-              Enter Password:
-            </label>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline transition duration-300 ease-in-out transform hover:scale-105"
-            />
-          </div>
+  //         <div className="mb-4">
+  //           <label className="block text-gray-700 text-sm font-bold mb-2">
+  //             Enter Password:
+  //           </label>
+  //           <input
+  //             type="password"
+  //             value={password}
+  //             onChange={(e) => setPassword(e.target.value)}
+  //             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline transition duration-300 ease-in-out transform hover:scale-105"
+  //           />
+  //         </div>
 
-          <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2">
-              Login As:
-            </label>
-            <select
-              value={usertype}
-              onChange={(e) => setUserType(e.target.value)}
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline transition duration-300 ease-in-out transform hover:scale-105"
-            >
-              <option value="">Login User As</option>
-              <option value="admin">Admin</option>
-              <option value="user">User</option>
-            </select>
-          </div>
+  //         <div className="mb-4">
+  //           <label className="block text-gray-700 text-sm font-bold mb-2">
+  //             Login As:
+  //           </label>
+  //           <select
+  //             value={usertype}
+  //             onChange={(e) => setUserType(e.target.value)}
+  //             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline transition duration-300 ease-in-out transform hover:scale-105"
+  //           >
+  //             <option value="">Login User As</option>
+  //             <option value="admin">Admin</option>
+  //             <option value="user">User</option>
+  //           </select>
+  //         </div>
 
-          <button
-            type="button"
-            onClick={handleSubmit}
-            className="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300 ease-in-out transform hover:scale-105"
+  //         <button
+  //           type="button"
+  //           onClick={handleSubmit}
+  //           className="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300 ease-in-out transform hover:scale-105"
+  //         >
+  //           Submit
+  //         </button>
+  //       </form>
+  //       <div>
+  //         <h1>admin: admin@gmail.com
+  //             password:123456
+  //         </h1>
+
+  //       </div>
+  //     </div>
+  //   </div>
+  // );
+return (
+  <div className="flex items-center justify-center min-h-screen bg-gray-600">
+    <div className="bg-white shadow-lg rounded-xl p-8 w-96 transform transition duration-500 ease-in-out hover:scale-[1.02]">
+      {/* Title */}
+      <h2 className="text-3xl font-bold text-center mb-6 text-gray-800">
+        Login Form
+      </h2>
+
+      {/* Form */}
+      <form className="space-y-4">
+        {/* Email */}
+        <div>
+          <label className="block text-gray-700 text-sm font-semibold mb-1">
+            Enter ID:
+          </label>
+          <input
+            type="text"
+            value={email}
+            onChange={(e) => setemail(e.target.value)}
+            placeholder="Enter your email"
+            className="shadow-md border rounded-lg w-full py-2 px-3 text-gray-700 focus:ring-2 focus:ring-blue-400 focus:outline-none transition"
+          />
+        </div>
+
+        {/* Password */}
+        <div>
+          <label className="block text-gray-700 text-sm font-semibold mb-1">
+            Enter Password:
+          </label>
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Enter your password"
+            className="shadow-md border rounded-lg w-full py-2 px-3 text-gray-700 focus:ring-2 focus:ring-blue-400 focus:outline-none transition"
+          />
+        </div>
+
+        {/* User Type */}
+        <div>
+          <label className="block text-gray-700 text-sm font-semibold mb-1">
+            Login As:
+          </label>
+          <select
+            value={usertype}
+            onChange={(e) => setUserType(e.target.value)}
+            className="shadow-md border rounded-lg w-full py-2 px-3 text-gray-700 focus:ring-2 focus:ring-blue-400 focus:outline-none transition"
           >
-            Submit
-          </button>
-        </form>
+            <option value="">Select Role</option>
+            <option value="admin">Admin</option>
+            <option value="user">User</option>
+          </select>
+        </div>
+
+        {/* Submit Button */}
+        <button
+          type="button"
+          onClick={handleSubmit}
+          className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg shadow-md transition transform hover:scale-105"
+        >
+          Submit
+        </button>
+      </form>
+
+      {/* Credentials Info */}
+      <div className="mt-6 p-3 bg-gray-100 rounded-lg border border-gray-200">
+        <p className="text-xs text-gray-600 mt-1">
+          <span className="font-medium">Admin</span>: admin@gmail.com <br />
+          <span className="font-medium">Password</span>: 123456
+        </p>
       </div>
     </div>
-  );
+  </div>
+);
+
 };
 
 export default Home;
